@@ -31,9 +31,12 @@ function App() {
             <h2 className='test'>Social media Dashboard</h2>
             <small>Total Followers: 23,004</small>
           </div>
-          <BtnContainer btnpc={btnStatus}>
-            <BtnCircle btnpc={btnStatus} onClick={() => [handleChangeTheme(), btnStatus ? setBtnStatus(false) : setBtnStatus(true)]} />
-          </BtnContainer>
+          <div className="btn-content">
+            <p style={{ marginRight: '1em', fontWeight: 700}}>{customTheme ? 'White ' : 'Dark '}mode</p>
+            <BtnContainer btnpc={btnStatus} onClick={() => [handleChangeTheme(), btnStatus ? setBtnStatus(false) : setBtnStatus(true)]}>
+              <BtnCircle btnpc={btnStatus} />
+            </BtnContainer>
+          </div>
         </TitleContainer>
 
         <Social />
@@ -75,6 +78,11 @@ justify-content:space-between;
 .test{
   margin:0;
   padding:0;
+}
+.btn-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 @media(max-width: 425px){
